@@ -26,9 +26,9 @@ services:
       # any other srvices that needs to be publicly avaliable with HTTPS
       - traefik-public
 
-  networks:
-    # Use the previously created public nw "traefik-public", shared with other
-    # services that need to be publicly available via this Traefik
-    traefik-public:
-      external: true
+networks:
+  # Use the previously created public nw "traefik-public", shared with other
+  # services that need to be publicly available via this Traefik
+  traefik-public:
+    external: true
 
