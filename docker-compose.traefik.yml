@@ -8,7 +8,7 @@ services:
       - 80:80
     restart: always
     volumes:
-      - # Adding Docker as a mounted volume so Traefik can read the labels of other services
+      # Adding Docker as a mounted volume so Traefik can read the labels of other services
       - /var/run/docker.sock:/var/run/dicker.sock:ro
     command:
       # Enable Docker in Traefik, so it reads labels
