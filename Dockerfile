@@ -1,4 +1,4 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
+FROM Polypod/fastApiStock.git:python3.8
 
 COPY ./app /app/
 
