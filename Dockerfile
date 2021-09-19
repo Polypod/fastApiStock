@@ -1,4 +1,4 @@
-FROM polypod/fastapistock.git:python3.8
+FROM polypod/fastapistock.git
 
 COPY ./app /app/
 
