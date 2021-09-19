@@ -1,5 +1,6 @@
 import * as digitalocean from "@pulumi/digitalocean";
 import * as tls from "@pulumi/tls";
+import * as docker from "@pulumi/docker";
 
 const privateKey = new tls.PrivateKey("my-private-key", {
     algorithm: "RSA",
@@ -15,6 +16,15 @@ const sshKey = new digitalocean.SshKey("my-ssh-key", {
      size: digitalocean.DropletSlug.DropletS1VCPU1GB,
      sshKeys: [sshKey.id],
  });
+
+ // Install docker
+const image = new docker.RemoteImage("ubuntu", {
+  name: "ubuntu:precise"
+});
+
+const container = new docker.Container("ubuntu", {
+  image: image.latest,
+});
 
  export let ipAddress = web.ipv4Address;
  export let status = web.status;

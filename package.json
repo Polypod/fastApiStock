@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@pulumi/digitalocean": "^4.6.1",
+    "@pulumi/docker": "^3.1.0",
     "@pulumi/tls": "^4.0.0"
   }
 }
