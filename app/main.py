@@ -1,14 +1,13 @@
 import sys
 
-from starlette.applications import Starlette
-from starlette.responses import JSONResponse
+from fastapi import FastAPI
 
 version = f"{sys.version_info.major}.{sys.version_info.minor}"
 
-app = Starlette()
+app = FastAPI()
 
 
-@app.route("/")
-async def homepage(request):
-    message = f"Hello world! From Starlette running on Uvicorn with Gunicorn. Using Python {version}"
-    return JSONResponse({"message": message})
+@app.get("/")
+async def read_root():
+    message = f"Hello world! From FastAPI running on Uvicorn with Gunicorn. Using Python {version}"
+    return {"message": message}
